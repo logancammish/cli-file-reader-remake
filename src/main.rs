@@ -35,7 +35,7 @@ fn main() {
     }
 
     let local = args[1].parse::<i32>().unwrap(); 
-    let speed = args[3].parse::<u64>().unwrap();
+    let speed = args[2].parse::<u64>().unwrap();
 
     if local == 1 {
         println!("Reading file...\n");
