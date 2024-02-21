@@ -17,7 +17,7 @@ fn main() {
     if !(args.len()>1) {
         // terminal arguments      
         args = Vec::from(
-            ["".to_string(), "".to_string(), "".to_string()]);
+            ["".to_string(), "".to_string(), "".to_string(), "".to_string()]);
 
         print!("Is this file local (1) or on the web (2)? ");
         args[1] = read!();
@@ -35,7 +35,7 @@ fn main() {
     }
 
     let local = args[1].parse::<i32>().unwrap(); 
-    let speed = args[2].parse::<u64>().unwrap();
+    let speed = args[3].parse::<u64>().unwrap();
 
     if local == 1 {
         println!("Reading file...\n");
