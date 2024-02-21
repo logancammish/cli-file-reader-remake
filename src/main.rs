@@ -1,20 +1,27 @@
-use std::{thread, time};
-
+use std::{env, thread, time};
 use text_io::read;
 
-fn main() {
-    print!("Is this file local (1) or on the web (2)?\r\n\r");
-    let input_: String = read!();
-    let lw: i32 = input_.parse::<i32>().unwrap();
-    thread::sleep(time::Duration::from_millis(1000));
-    print!("{lw} chosen...\r");
-    thread::sleep(time::Duration::from_millis(1000));
+struct Program { }
+impl Program { 
+    fn sleep(t: u64) { 
+        thread::sleep(time::Duration::from_millis(t));
+    }
+}
+fn main() { 
+    let mut args: Vec<_> = env::args().collect();
 
-    print!("Please enter the relevant address or location of the file:\n\r\n");
-    let location: String = read!(); 
-    thread::sleep(time::Duration::from_millis(1000));
-    print!("{location} chosen...\r");
-    thread::sleep(time::Duration::from_millis(1000));
-    
-    print!("Reading file...\r");
+    if !args.len()>1 {
+        // terminal arguments      
+        args = Vec::from(
+            ["".to_string(), "".to_string(), "".to_string()]);
+
+        print!("Is this file local (1) or on the web (2)? ");
+        args[1] = read!();
+        Program::sleep(1000);
+
+        print!("Please enter the relevant address or location of the file: ");
+        args[2] = read!(); 
+        Program::sleep(1000);
+    }
+    println!("Reading file...\n");
 }
