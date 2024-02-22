@@ -29,6 +29,20 @@ Easily read files over CLI, based on my [older Python project](https://github.co
 3. Open the repository location in a terminal, and run `cargo build --release`
 4. You will find your executable in `/target/release`
 
+# Updating
+> Note: You can always roll back to an old release by downloading an older release
+### <ins>Linux</ins>
+1. Remove your binary, wherever it is located (if installed through installation script, it will be located in `~/bin`)
+2. Follow the installation instructions again
+
+### <ins>Windows</ins>
+1. Remove your executable, wherever it is located
+2. Redownload the executable from [here](https://github.com/logancammish/cli-file-reader-remake/releases/latest) in the same location as the old file
+
+### <ins>MacOS, FreeBSD, Android and others:</ins>
+1. Delete the old clone
+2. Follow the installation instructions again
+   
 # Copyright
 Copyright © Logan Cammish 2024
 
