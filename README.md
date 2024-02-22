@@ -25,7 +25,7 @@ Lightweight program to easily read files over CLI, based on my [older Python pro
 4. Press "Edit" then "New" and add the location of the executable
 
 ### <ins>MacOS, FreeBSD, Android and others:</ins>
-1. Clone this github repository
+1. Clone this github repository (with git: `git clone https://github.com/logancammish/cli-file-reader-remake.git`)
 2. Install Rust [here](https://www.rust-lang.org/tools/install)
 3. Open the repository location in a terminal, and run `cargo build --release`
 4. You will find your executable in `/target/release`
