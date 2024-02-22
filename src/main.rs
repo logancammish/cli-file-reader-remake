@@ -1,4 +1,4 @@
-use std::{fs::File, io::{self, BufRead}, path::Path, env, process::exit, thread, time};
+use std::{fs::File, io::{self, BufRead}, env, process::exit, thread, time};
 use text_io::read;
 
 struct Program { }
@@ -16,8 +16,12 @@ fn main() {
 
     if !(args.len()>1) {
         // terminal arguments      
-        args = Vec::from(
-            ["".to_string(), "".to_string(), "".to_string(), "".to_string()]);
+        args = Vec::from([
+            "".to_string(), 
+            "".to_string(), 
+            "".to_string(), 
+            "".to_string()
+        ]);
 
         print!("Is this file local (1) or on the web (2)? ");
         args[1] = read!();
@@ -30,6 +34,13 @@ fn main() {
         print!("How long do you want to wait between lines (ms)? ");
         args[3] = read!(); 
         Program::sleep(1000);
+    } else if args.len()==2 { 
+        args = Vec::from([
+            "".to_string(),
+            "1".to_string(), 
+            args[1].to_string(), 
+            "1".to_string()
+        ])
     } else if !(args.len()==4) {
         println!("\n\n!!! Invalid number of arguments !!! \n\n");
     }
