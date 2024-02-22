@@ -1,7 +1,8 @@
 # cli-file-reader-remake
 [![build](https://github.com/logancammish/cli-file-reader-remake/actions/workflows/rust.yml/badge.svg)](https://github.com/logancammish/cli-file-reader-remake/actions/workflows/rust.yml)
 
-Easily read files over CLI, based on my [older Python project](https://github.com/logancammish/cli-file-reader), now written in Rust.
+Lightweight program to easily read files over CLI, based on my [older Python project](https://github.com/logancammish/cli-file-reader), now written in Rust.
+
 
 
 
