@@ -1,5 +1,8 @@
 use std::{fs::File, io::{self, BufRead}, env, process::exit, thread, time};
 use text_io::read;
+use html2text;
+use reqwest::get;
+use tokio::main;
 
 struct Program { }
 impl Program { 
@@ -11,7 +14,9 @@ impl Program {
         return Ok(io::BufReader::new(file).lines());
     }
 }
-fn main() { 
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>>{ 
     let mut args: Vec<_> = env::args().collect();
 
     if !(args.len()>1) {
@@ -60,8 +65,17 @@ fn main() {
         }
     } else if local == 2 { 
         println!("Not implemented yet");
+        
+        let text = reqwest::get("https://logancammish.github.io")
+            .await?
+            .text()
+            .await?;
+
+        println!("{:#?}", html2text::from_read(&text.as_bytes()[..], 30));
     } else {
         println!("Invalid input");
-        exit(2);
+        exit(0);
     }
+
+    Ok(())
 }
