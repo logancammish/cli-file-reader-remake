@@ -4,4 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-text_io = "x"
+text_io = "0.1.12"
+html2text = "0.12.2"
+reqwest = "0.11.24"
+tokio = { version = "x", features = ["full"] }
