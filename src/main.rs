@@ -64,9 +64,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>>{
             println!("File not found (did you spell it correctly?)");
         }
     } else if local == 2 { 
-        println!("Not implemented yet");
+        println!("Reading from web...");
         
-        let text = reqwest::get("https://logancammish.github.io")
+        let text = reqwest::get(args[2])
             .await?
             .text()
             .await?;
