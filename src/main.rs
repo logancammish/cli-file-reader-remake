@@ -66,7 +66,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>>{
     } else if local == 2 { 
         println!("Reading from web...");
         
-        let text = reqwest::get(args[2])
+        let text = reqwest::get(args[2].as_str())
             .await?
             .text()
             .await?;
